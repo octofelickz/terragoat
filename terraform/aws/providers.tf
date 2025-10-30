@@ -5,10 +5,14 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias      = "plain_text_access_keys_provider"
-  region     = "us-west-1"
-  access_key = "AKIAIOSFODNN7EXAMPLE"
-  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  alias   = "plain_text_access_keys_provider"
+  region  = "us-west-1"
+  # Security Fix: Removed hardcoded credentials. 
+  # Use environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY instead,
+  # or configure credentials via AWS CLI/SDK credential files.
+  # Original vulnerable code had hardcoded:
+  # access_key = "AKIAIOSFODNN7EXAMPLE"
+  # secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 }
 
 terraform {
