@@ -12,8 +12,9 @@ sudo apt-get update
 sudo apt-get install -y apache2
 sudo systemctl start apache2
 sudo systemctl enable apache2
-export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMAAA
-export AWS_SECRET_ACCESS_KEY=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
+# Security Fix: Removed hardcoded AWS credentials from user data.
+# Use EC2 IAM instance roles instead for secure access to AWS services.
+# Original vulnerable code exported hardcoded AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 export AWS_DEFAULT_REGION=us-west-2
 echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
 EOF

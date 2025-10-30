@@ -42,8 +42,10 @@ resource "aws_lambda_function" "analysis_lambda" {
 
   environment {
     variables = {
-      access_key = "AKIAIOSFODNN7EXAMPLE"
-      secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+      # Security Fix: Removed hardcoded credentials from environment variables.
+      # Use AWS IAM roles, AWS Secrets Manager, or environment variables instead.
+      # Original vulnerable code contained hardcoded AWS access_key and secret_key
+      example_var = "secure_value_here"
     }
   }
   tags = {
