@@ -10,9 +10,7 @@ provider "aws" {
   # Security Fix: Removed hardcoded credentials. 
   # Use environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY instead,
   # or configure credentials via AWS CLI/SDK credential files.
-  # Original vulnerable code had hardcoded:
-  # access_key = "AKIAIOSFODNN7EXAMPLE"
-  # secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  # Original vulnerable code contained hardcoded AWS access_key and secret_key values
 }
 
 terraform {
